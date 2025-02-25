@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            padding: 10px 10px;
+        }
+        .screen{
+            font-size: 180px;
+            text-shadow: 5px 5px grey;
+            color: aliceblue;
+            text-align: center;
+            display: grid;
+            background-color: black;
+            border-radius: 20px;
+            margin: 10px;
+        }
+        .click{
+            width: 20vw;
+            height: 5vh;
+            background-color: darkred;
+            color: aliceblue;
+            font-size: large;
+            margin-top: 30px;
+            margin-left: 130px;
+        }
+        #text{
+            color: rgb(231, 240, 224);
+            text-align: center;
+            font-family: cursive;
+            font-size: 45px;
+            position: absolute;
+            top: 30px;
+        }
+        #image{
+            width: 96vw;
+            position: relative;
+            height: 40vh;
+        }
+        @media only screen and (min-width: 1150px) {
+            .screen{
+                width: 40vw;
+                height: 40vh;
+            }
+            .head{
+                position: absolute;
+                right: 50px;
+                top: 140px;
+            }
+            #image{
+                width: 97.5vw;
+                height: 95vh;
+            }
+            #text{
+                top: 140px;
+                width: 50vw;
+                font-size: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="./children.jpg" id="image">
+    <h1 id="text">Learn To Read The Alphabets.</h1>
+    <div class="head">
+        <h1 id="alphabet" class="screen">A</h1>
+        <button onclick="nextAlphabet()" class="click">Next</button>
+    </div>
+    <script>
+        var alphabets = 
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var index = 0;
+        function nextAlphabet(){
+            index++;
+            if (index >= alphabets.length) {
+                index = 0;
+            }
+            document.getElementById("alphabet").innerHTML = alphabets[index];
+        }
+    </script>
+</body>
+</html>
